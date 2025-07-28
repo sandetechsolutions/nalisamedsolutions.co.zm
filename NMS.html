@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nalisa Medical Solutions Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --accent: #00bfff;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a1a1a;
+      --text: #f5f5f5;
+      --accent: #00bfff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background: var(--accent);
+      color: white;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header img {
+      width: 80px;
+      margin-bottom: 0.5rem;
+    }
+
+    .news-ticker {
+      background: #e0f7ff;
+      padding: 10px;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .news-ticker span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: ticker 15s linear infinite;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .container {
+      padding: 2rem;
+    }
+
+    .appointment-section {
+      max-width: 600px;
+      margin: auto;
+      background: #f1f9ff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .appointment-section img.profile {
+      width: 100px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    .appointment-section h2 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .days-available {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .submit-btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      margin-top: 1rem;
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .social-icons {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: var(--accent);
+      font-size: 24px;
+    }
+
+    .map-icons {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .theme-toggle {
+      cursor: pointer;
+      font-size: 18px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    footer {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+  <header>
+    <img src="logo.jpg" alt="Nalisa Logo">
+    <h1>Nalisa Medical Solutions</h1>
+    <div class="theme-toggle" onclick="toggleTheme()">🌞 / 🌙</div>
+  </header>
+
+  <div class="news-ticker">
+    <span>📢 Now accepting bookings for Dr. Nalisa – Available Mondays, Thursdays, and Fridays | Emergency Contact: +2609773281800</span>
+  </div>
+
+  <div class="container">
+    <section class="appointment-section">
+      <img class="profile" src="https://via.placeholder.com/100" alt="Dr. Nalisa Profile Picture">
+      <h2>Book Appointment with Dr. Nalisa</h2>
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name">
+
+      <label for="age">Age:</label>
+      <input type="number" id="age">
+
+      <label for="date">Pick Appointment Date:</label>
+      <input type="date" id="date">
+
+      <label for="problem">Nature of Problem:</label>
+      <select id="problem">
+        <option>General Consultation</option>
+        <option>Lab Result Review</option>
+        <option>Scan Analysis</option>
+        <option>Medical Advice</option>
+        <option>Follow-Up</option>
+      </select>
+
+      <label for="file">Attach Files:</label>
+      <input type="file" id="file" multiple>
+
+      <div class="days-available">
+        <p><strong>Available Days:</strong> Monday, Thursday, Friday</p>
+      </div>
+
+      <button class="submit-btn" onclick="sendEmail()">Send Appointment Request</button>
+    </section>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-twitter-square"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-instagram-square"></i></a>
+      <a href="#"><i class="fab fa-whatsapp-square"></i></a>
+      <a href="#"><i class="fab fa-youtube-square"></i></a>
+    </div>
+
+    <div class="map-icons">
+      <a href="https://maps.google.com" target="_blank" title="Open Google Maps">
+        <i class="fas fa-map-marker-alt" style="font-size: 24px; color: var(--accent);"></i>
+      </a>
+      <a href="https://zoom.us" target="_blank" title="Open Zoom">
+        <i class="fas fa-video" style="font-size: 24px; color: var(--accent); margin-left: 20px;"></i>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Sande Tech Solutions. All Rights Reserved.
+  </footer>
+<script>
+  if (sessionStorage.getItem("dashboardVisited") !== "true") {
+    // Redirect back to dashboard if not visited
+    window.location.href = "dashboard.html";
+  }
+</script>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      body.setAttribute("data-theme", body.getAttribute("data-theme") === "light" ? "dark" : "light");
+    }
+
+    function sendEmail() {
+      const name = document.getElementById("name").value;
+      const age = document.getElementById("age").value;
+      const problem = document.getElementById("problem").value;
+      const date = document.getElementById("date").value;
+
+      const mailto = `mailto:tendaisande729@gmail.com?subject=Appointment Request for Dr. Nalisa&body=Full Name: ${name}%0AAge: ${age}%0AAppointment Date: ${date}%0AProblem: ${problem}%0A%0AAttach relevant files manually before sending.`;
+      window.location.href = mailto;
+    }
+  </script>
+</body>
+</html>
