@@ -1,5 +1,5 @@
 # Welcome to NALISA MEDICAL SOLUTIONS
-> ⚠️ This project is protected by a proprietary license. All rights reserved by Dr. Nalisa, Sande Tech Solutions.
+> ⚠️ This project is protected by a proprietary license. All rights reserved by Dr. Nalisa, Nalisa Medical Solutions.
 
 <p align="center">
   <img src="logo.jpg" alt="NALISA Medical Solutions Logo" width="200"/>
