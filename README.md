@@ -10,7 +10,7 @@
 ---
 
 ### 🔗 Official Website / App
-**[Visit dashboard.html](dashboard.html)**  
+**[Official Website/App](dashboard.html)**  
 Access our main dashboard to explore services, view medical records, and manage your appointments with ease.
 
 ---
