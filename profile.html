@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. David Lubasi Nalisa - Endocrinologist & Researcher</title>
+  <style>
+    /* ===== Global Styles ===== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+      transition: background 0.5s, color 0.5s;
+    }
+    body.night {
+      background: #121212;
+      color: #e0e0e0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #2a5298, #1e3c72);
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px 40px;
+      position: relative;
+    }
+    header img.profile-pic {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 5px 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      margin: 0;
+    }
+
+    /* ===== Logo top-left ===== */
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+    .logo-text {
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    /* ===== Toggle Button ===== */
+    .toggle-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 14px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #1e3c72;
+      transition: 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #2a5298;
+      color: #fff;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      background: #fff;
+      padding: 10px 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.5s, color 0.5s;
+    }
+    nav a {
+      text-decoration: none;
+      color: #1e3c72;
+      font-weight: bold;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #2a5298;
+    }
+    body.night nav {
+      background: #1f1f1f;
+    }
+    body.night nav a {
+      color: #e0e0e0;
+    }
+
+    /* ===== Section Styles ===== */
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    section h2 {
+      font-size: 2rem;
+      color: #1e3c72;
+      border-left: 5px solid #2a5298;
+      padding-left: 10px;
+      margin-bottom: 20px;
+    }
+    body.night section h2 {
+      color: #fff;
+      border-left-color: #bbb;
+    }
+    .bio {
+      font-size: 1.1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: #fff;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-left: 4px solid #2a5298;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      transition: background 0.5s, color 0.5s;
+    }
+    body.night ul li {
+      background: #1e1e1e;
+      border-left-color: #888;
+      color: #ddd;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact {
+      text-align: center;
+    }
+    .contact a, .contact .phone {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #1e3c72;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .contact a:hover {
+      background: #2a5298;
+    }
+    .phone {
+      cursor: default;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #1e3c72;
+      color: #fff;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      margin-top: 30px;
+    }
+
+    /* ===== Scroll Reveal Animation ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-in-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="logo.jpeg" alt="Nalisa Medical Solutions Logo">
+      <div class="logo-text">Founder, Nalisa Medical Solutions</div>
+    </div>
+
+    <!-- Night Toggle -->
+    <button class="toggle-btn" onclick="toggleNight()">🌙 Night</button>
+
+    <!-- Profile Picture -->
+    <img src="n.jpeg" alt="Dr. Nalisa" class="profile-pic">
+
+    <h1>Dr. David Lubasi Nalisa</h1>
+    <p>Endocrinologist | Researcher | Medical Innovator</p>
+  </header>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#contact">Contact</a>
+<a href="#affiliations">Current Affiliations</a>
+  </nav>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="fade-in">
+    <h2>About</h2>
+    <p class="bio">
+      Dr. David Lubasi Nalisa is an <strong>Endocrinologist</strong> and 
+      <strong>Researcher</strong> affiliated with 
+      <em>The First Affiliated Hospital of Henan University of Science and Technology</em> 
+      in Luoyang, China. His groundbreaking research focuses on 
+      <strong>Stem Cell Therapy, Diabetic Foot Ulcers (DFU), and Obesity</strong>, 
+      aiming to transform therapeutic approaches in endocrinology and regenerative medicine.
+    </p>
+  </section>
+
+  <!-- ===== RESEARCH SECTION ===== -->
+  <section id="research" class="fade-in">
+    <h2>Key Research Areas</h2>
+    <ul>
+      <li><strong>Stem Cell Therapy for Diabetic Foot Ulcers</strong>: Demonstrated 86.41% success rate in Wagner-II lesions using mesenchymal stem cell application (SCA), significantly reducing the risk of amputation.</li>
+      <li><strong>Mazdutide for Weight Loss</strong>: Investigated dual agonist Mazdutide for diabetes patients, showing reductions in body weight, blood pressure, and cholesterol.</li>
+      <li><strong>Adipose-Derived Stem Cells</strong>: Exploring wound healing and tissue repair mechanisms using adipose-derived stem cells.</li>
+      <li><strong>Extracellular Vesicles</strong>: Studying vesicles from adipose mesenchymal stem cells in diabetic wound healing.</li>
+      <li><strong>Cell-Based Therapy</strong>: Developing innovative therapies for non-healing diabetic ulcers using allogeneic adipose-derived stem cells.</li>
+    </ul>
+  </section>
+
+  <!-- ===== CURRENT AFFILIATIONS SECTION ===== -->
+  <section id="affiliations" class="fade-in">
+    <h2>Current Affiliations</h2>
+    <ul>
+<li><strong>Nalisa Medical Solutions (Centre) </strong> - Founder and Doctor – Lusaka, Zambia</li>
+      <li><strong>University Teaching Hospital</strong> – Lusaka, Zambia</li>
+      <li><strong>Royal Medical University</strong> – International collaboration in endocrinology and regenerative medicine – Lusaka, Zambia</li>
+      <li><strong>Fairview Hospital</strong> – Supporting advanced diabetes care and obesity management programs – Lusaka, Zambia</li>
+    </ul>
+  </section>
+
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact" class="fade-in contact">
+    <h2>Contact</h2>
+    <p>For collaborations, research inquiries, or speaking engagements, connect with Dr. Nalisa below:</p>
+    <div class="phone">📞 +260773281800</div>
+    <a href="mailto:davidnalisa@example.com">Email</a>
+    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; 2025 Dr. David Lubasi Nalisa | Designed by Tendai Sande
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Scroll Fade Animation
+    const faders = document.querySelectorAll('.fade-in');
+    const options = { threshold: 0.2 };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    faders.forEach(fader => {
+      appearOnScroll.observe(fader);
+    });
+
+    // Toggle Night Mode
+    function toggleNight() {
+      document.body.classList.toggle('night');
+      const btn = document.querySelector('.toggle-btn');
+      if (document.body.classList.contains('night')) {
+        btn.textContent = "☀️ Day";
+      } else {
+        btn.textContent = "🌙 Night";
+      }
+    }
+  </script>
+</body>
+</html>
