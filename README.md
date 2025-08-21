@@ -2,7 +2,7 @@
 > ⚠️ This project is protected by a proprietary license. All rights reserved by Dr. Nalisa, Nalisa Medical Solutions.
 
 <p align="center">
-  <img src="logo.jpg" alt="NALISA Medical Solutions Logo" width="200"/>
+  <img src="logo.jpeg" alt="NALISA Medical Solutions Logo" width="200"/>
 </p>
 
 # Welcome to NALISA MEDICAL SOLUTIONS
