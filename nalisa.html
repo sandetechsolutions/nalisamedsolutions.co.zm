@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Book Appointment | Nalisa Medical Solutions</title>
+  <title>NALISA MEDICAL SOLUTIONS</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
@@ -29,15 +29,9 @@
     }
 
     header h1 {
-      margin: 5px 0 5px 0;
+      margin: 5px 0 10px 0;
       color: #007acc;
-      font-size: 1.6rem;
-    }
-
-    header p {
-      margin: 0;
-      font-size: 1rem;
-      color: #333;
+      font-size: 1.8rem;
     }
 
     .toggle-btn {
@@ -53,6 +47,22 @@
       font-size: 0.9rem;
     }
 
+    .social-icons {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      margin: 0 8px;
+      font-size: 24px;
+      color: #005f99;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #003366;
+    }
+
     .container {
       max-width: 700px;
       margin: 30px auto;
@@ -64,18 +74,12 @@
 
     .profile-img {
       display: block;
-      margin: 0 auto 15px auto;
+      margin: 0 auto 20px auto;
       border-radius: 50%;
-      width: 120px;
-      height: 120px;
+      width: 130px;
+      height: 130px;
       object-fit: cover;
       border: 4px solid #007acc;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #007acc;
     }
 
     form label {
@@ -148,6 +152,10 @@
       border-color: #666;
     }
 
+    .dark-mode .social-icons a {
+      color: #00cfff;
+    }
+
     .dark-mode footer {
       background-color: #2e2e4d;
       color: #ccc;
@@ -158,12 +166,105 @@
         width: 100%;
         margin-bottom: 10px;
       }
+
       .form-buttons {
         flex-direction: column;
       }
     }
+
+
+
+ nav {
+    background-color: #3b3b98; /* Deep purple-blue */
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  nav ul li {
+    position: relative;
+    margin-right: 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+  }
+
+  nav ul li:hover > a {
+    background-color: #575fcf;
+    border-radius: 5px;
+  }
+
+  nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: #3b3b98;
+    top: 40px;
+    left: 0;
+    min-width: 160px;
+    z-index: 999;
+    border-radius: 5px;
+  }
+
+  nav ul li:hover ul {
+    display: block;
+  }
+
+  nav ul li ul li {
+    margin: 0;
+  }
+
+  nav ul li ul li a:hover {
+    background-color: #575fcf;
+  }
+
+
   </style>
 </head>
+
+<nav>
+  <ul>
+    <li><a href="dashboard.html">Home</a></li>
+    
+    <li>
+      <a href="#">Make Payment ▾</a>
+      <ul>
+        <li><a href="pay.html">Pay Now</a></li>
+        <li><a href="#subscription">Subscriptions</a></li>
+        <li><a href="#invoice">Download Invoice</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">Policy ▾</a>
+      <ul>
+        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#terms">Terms & Conditions</a></li>
+        <li><a href="#refund">Refund Policy</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">About ▾</a>
+      <ul>
+<li><a href="profile.html">About Dr. Lubasi Nalisa</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#mission">Our Mission</a></li>
+        <li><a href="#team">Meet the Team</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 <body>
 
   <button class="toggle-btn" onclick="toggleTheme()">Toggle Day/Night</button>
@@ -171,12 +272,18 @@
   <header>
     <img src="n.jpeg" alt="Nalisa Logo" />
     <h1>NALISA MEDICAL SOLUTIONS</h1>
-    <p>Book an Appointment with Dr. David Lubasi Nalisa</p>
+    <div class="social-icons">
+      <a href="https://wa.me/260773281800" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
   </header>
 
   <div class="container">
-    <img src="profile.jpg" alt="Dr. Nalisa" class="profile-img" />
-    <h2>Appointment Request Form</h2>
+    <img src="profile.jpg" alt="Dr. Nalisa Profile" class="profile-img" />
 
     <form id="bookingForm">
       <label for="fullname">Full Name:</label>
@@ -185,16 +292,38 @@
       <label for="service">Service:</label>
       <select id="service" required>
         <option value="">Select a service</option>
-        <option value="Endocrine & Diabetes">Endocrine & Diabetes</option>
-        <option value="General Consultation">General Consultation</option>
-        <option value="Obstetrics & Gynaecology">Obstetrics & Gynaecology</option>
-        <option value="Pediatrics">Pediatrics</option>
-        <option value="Dental Care">Dental Care</option>
-        <option value="Nutrition">Nutrition</option>
-        <option value="Surgical Services">Surgical Services</option>
-        <option value="Laboratory">Laboratory</option>
-        <option value="Eye Clinic">Eye Clinic</option>
-        <option value="Mental Health">Mental Health</option>
+<option value="Dental Care">Dental Care</option>
+<option value="Laboratory">Laboratory</option>
+<option value="Eye Clinic">Eye Clinic</option>
+<option value="Maternity">Maternity</option>
+<option value="Pharmacy">Pharmacy</option>
+<option value="General Consultation">General Consultation</option>
+<option value="Pediatrics">Pediatrics</option>
+<option value="Surgical Services">Surgical Services</option>
+<option value="Orthopedics">Orthopedics</option>
+<option value="Physiotherapy">Physiotherapy</option>
+<option value="ENT Services">ENT Services</option>
+<option value="Ultrasound">Ultrasound</option>
+<option value="Mental Health">Mental Health</option>
+<option value="Vaccination">Vaccination</option>
+<option value="Family Planning">Family Planning</option>
+<option value="COVID-19 Testing">COVID-19 Testing</option>
+<option value="Endocrine & Diabetes">Endocrine & Diabetes</option>
+<option value="Infectious Diseases">Infectious Diseases</option>
+<option value="G.I Disorders">G.I Disorders</option>
+<option value="Nephrology">Nephrology</option>
+<option value="General Surgery">General Surgery</option>
+<option value="Neuro Services">Neuro Services</option>
+<option value="Dermatology">Dermatology</option>
+<option value="Nutrition">Nutrition</option>
+<option value="Psychosocial Counseling">Psychosocial Counseling</option>
+<option value="Critical Care">Critical Care</option>
+<option value="Hematology">Hematology</option>
+<option value="Rheumatology and Arthritis">Rheumatology and Arthritis</option>
+<option value="Urology">Urology</option>
+<option value="Obstetrics & Gynaecology">Obstetrics & Gynaecology</option>
+<option value="Family Medicine">Family Medicine</option>
+
       </select>
 
       <label for="date">Preferred Date:</label>
@@ -214,8 +343,7 @@
   </div>
 
   <footer>
-    &copy; 2025 Nalisa Medical Solutions. All rights reserved. <br/>
-    Contact: +260 773 281 800 | Email: Davidnalisa86@gmail.com
+    &copy; 2025 Nalisa Medical Solutions. All rights reserved.
   </footer>
 
   <script>
@@ -229,31 +357,26 @@
       const date = document.getElementById("date").value;
       const time = document.getElementById("time").value;
       const message = document.getElementById("message").value;
+
       return { name, service, date, time, message };
     }
 
     function sendToGmail() {
       const { name, service, date, time, message } = getBookingDetails();
       const subject = `Appointment Request - ${service}`;
-      const body = `Dear Dr. Nalisa,%0D%0A
-My name is ${name}.%0D%0A
-I would like to book an appointment:%0D%0A
-Service: ${service}%0D%0A
-Date: ${date}%0D%0A
-Time: ${time}%0D%0A
-Message: ${message}%0D%0A%0D%0A
-Thank you.`;
+      const body = `Dear Dr. Nalisa,%0D%0AMy name is ${name}.%0D%0AI would like to book an appointment for the following service:%0D%0AService: ${service}%0D%0ADate: ${date}%0D%0ATime: ${time}%0D%0AMessage: ${message}%0D%0A%0D%0AThank you.`;
       window.location.href = `mailto:Davidnalisa86@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
     }
 
     function sendToWhatsApp() {
       const { name, service, date, time, message } = getBookingDetails();
       const whatsappMessage =
-        `Hello Dr. Nalisa,%0A%0AMy name is ${name}. I would like to book an appointment for:%0A` +
-        `Service: ${service}%0A` +
-        `Date: ${date}%0A` +
-        `Time: ${time}%0A` +
-        `Message: ${message}%0A%0AThank you!`;
+        `Hello Dr. Nalisa,%0A%0AMy name is ${name}. I would like to book an appointment for:` +
+        `%0AService: ${service}` +
+        `%0ADate: ${date}` +
+        `%0ATime: ${time}` +
+        `%0AMessage: ${message}` +
+        `%0A%0AThank you!`;
       const whatsappNumber = "260773281800";
       window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, "_blank");
     }
